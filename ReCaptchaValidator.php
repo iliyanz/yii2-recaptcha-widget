@@ -115,7 +115,7 @@ class ReCaptchaValidator extends Validator
             $response = @file_get_contents($request);
 
             if ($response === false) {
-                throw new Exception('Unable connection to the captcha server.');
+                throw new Exception('Unable connection to the captcha server. In php the extension allow_url_fopen must be On (active) in order to work!');
             }
         } else {
             $options = array(
